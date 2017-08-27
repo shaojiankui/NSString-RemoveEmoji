@@ -24,34 +24,47 @@
                                                  ofType:@"txt"]
                                                  encoding:NSUTF8StringEncoding
                                                     error: &error];
+    NSLog(@"unicode string:%@",[self utf8ToUnicode:origin]);
+
     self.text.text = origin;
 }
+- (IBAction)removingEmoji:(id)sender {
+    NSString *string =  [self.text.text removingEmoji];
+    self.result.text = string;
+    NSLog(@"removingEmoji:%@",string);
+}
+
+- (IBAction)stringByRemovingEmoji:(id)sender {
+    NSString *string =  [self.text.text stringByRemovingEmoji];
+    self.result.text = string;
+    NSLog(@"stringByRemovingEmoji:%@",string);
+}
+
+- (IBAction)stringByReplaceingEmojiWithString:(id)sender {
+    NSString *string =  [self.text.text stringByReplaceingEmojiWithString:@"<emoji>"];
+    self.result.text = string;
+    NSLog(@"stringByReplaceingEmojiWithString:%@",string);
+}
+
+- (IBAction)allEmoji:(id)sender {
+    NSLog(@"allEmoji:%@",[self.text.text allEmoji]);
+    NSLog(@"allEmojiString:%@",[self.text.text allEmojiString]);
+}
+
+- (IBAction)allEmojiRanges:(id)sender {
+    NSLog(@"allEmojiRanges:%@",[self.text.text allEmojiRanges]);
+}
+
+- (IBAction)allSystemEmoji:(id)sender {
+    NSLog(@"allEmoji:%@",[NSString allSystemEmoji]);
+}
+
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
 
     return YES;
 }
 
-- (IBAction)filterTouched:(id)sender {
-    NSString *string = self.text.text;
-    NSLog(@"unicode test:%@",[self utf8ToUnicode:string]);
-    
-    string = [string removedEmojiString];
-    self.result.text = string;
-    NSLog(@"string:%@",string);
-}
-
-
-
-
-- (IBAction)fuckTouched:(id)sender {
-   //NSString *test = @"⭐⭐️㊙️㊗️⬅️⬆️⬇️⤴️⤵️#️⃣0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣〰©®〽️‼️⁉️⭕️⬛️⬜️⭕⭐⬆⬇⬅㊙㊗⭕©®⤴⤵〰†⟹ツღ";
-    NSString *test = @"⭐1344234⭐⭐️";
-    NSLog(@"unicode fuck text:%@",[self utf8ToUnicode:test]);
-    NSString *result = [test removedEmojiString];
-    self.result.text = result;
-    
-}
 
 
 -(NSString *)utf8ToUnicode:(NSString *)string
@@ -87,5 +100,19 @@
     return unicodeString;
 }
 
++ (NSString*)unicodeToUtf8:(NSString*)aUnicodeString
 
+{
+    NSString *tempString1 = [aUnicodeString stringByReplacingOccurrencesOfString:@"\\u"withString:@"\\U"];
+    
+    NSString *tempString2 = [tempString1 stringByReplacingOccurrencesOfString:@"\""withString:@"\\\""];
+    
+    NSString *tempString3 = [[@"\""stringByAppendingString:tempString2] stringByAppendingString:@"\""];
+    
+    NSData *tempData = [tempString3 dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *returnString = [NSPropertyListSerialization propertyListWithData:tempData options:NSPropertyListImmutable format:NULL error:NULL];
+
+    return [returnString stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
+}
 @end

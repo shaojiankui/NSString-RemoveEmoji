@@ -11,7 +11,4 @@
 @interface RootViewController : UIViewController<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *text;
 @property (weak, nonatomic) IBOutlet UITextView *result;
-
-- (IBAction)filterTouched:(id)sender;
-
 @end

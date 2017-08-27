@@ -1,9 +1,12 @@
 # NSString-RemoveEmoji
-RemoveEmoji,A category completely remove Emoji in NSString
+NSString-RemoveEmoji,A category detecting or completely remove Emoji in NSString
 
-**完全**移除字符串中出现的Emoji表情,ios8.3新增加的表情测试可用
+1. **完全**移除字符串中出现的Emoji表情
+2. emoji批量替换成任意字符串
+2. 可以获得api支持的所有emoji
+3. 获得字符串中所有的emoji
+4. 获得字符串中所有的eoji range
 
-基于:https://github.com/woxtu/NSString-RemoveEmoji增强
 
 Emoji大全:http://getemoji.com/
 
