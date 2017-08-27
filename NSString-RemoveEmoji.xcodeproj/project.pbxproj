@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		A25EC49E1F5295290044B846 /* emojilist.txt in Resources */ = {isa = PBXBuildFile; fileRef = A25EC49C1F5295290044B846 /* emojilist.txt */; };
 		A25EC49F1F5295290044B846 /* emoji.txt in Resources */ = {isa = PBXBuildFile; fileRef = A25EC49D1F5295290044B846 /* emoji.txt */; };
+		A25EC4A31F52BEFD0044B846 /* NSString+RemoveEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = A25EC4A21F52BEFD0044B846 /* NSString+RemoveEmoji.m */; };
 		A292BD991B033E97002DAB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A292BD981B033E97002DAB71 /* main.m */; };
 		A292BD9C1B033E97002DAB71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A292BD9B1B033E97002DAB71 /* AppDelegate.m */; };
 		A292BDA41B033E97002DAB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A292BDA31B033E97002DAB71 /* Images.xcassets */; };
 		A292BDA71B033E97002DAB71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A292BDA51B033E97002DAB71 /* LaunchScreen.xib */; };
 		A292BDBF1B033EB3002DAB71 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A292BDBD1B033EB3002DAB71 /* RootViewController.m */; };
 		A292BDC01B033EB3002DAB71 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A292BDBE1B033EB3002DAB71 /* RootViewController.xib */; };
-		A292BDCA1B033EB7002DAB71 /* NSString+RemoveEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = A292BDC61B033EB7002DAB71 /* NSString+RemoveEmoji.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A25EC49C1F5295290044B846 /* emojilist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emojilist.txt; sourceTree = "<group>"; };
 		A25EC49D1F5295290044B846 /* emoji.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emoji.txt; sourceTree = "<group>"; };
+		A25EC4A11F52BEFD0044B846 /* NSString+RemoveEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RemoveEmoji.h"; sourceTree = "<group>"; };
+		A25EC4A21F52BEFD0044B846 /* NSString+RemoveEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RemoveEmoji.m"; sourceTree = "<group>"; };
 		A292BD931B033E97002DAB71 /* NSString-RemoveEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NSString-RemoveEmoji.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A292BD971B033E97002DAB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A292BD981B033E97002DAB71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -31,8 +33,6 @@
 		A292BDBC1B033EB3002DAB71 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		A292BDBD1B033EB3002DAB71 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		A292BDBE1B033EB3002DAB71 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		A292BDC51B033EB7002DAB71 /* NSString+RemoveEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RemoveEmoji.h"; sourceTree = "<group>"; };
-		A292BDC61B033EB7002DAB71 /* NSString+RemoveEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RemoveEmoji.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A25EC4A01F52BEFD0044B846 /* NSString-RemoveEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				A25EC4A11F52BEFD0044B846 /* NSString+RemoveEmoji.h */,
+				A25EC4A21F52BEFD0044B846 /* NSString+RemoveEmoji.m */,
+			);
+			path = "NSString-RemoveEmoji";
+			sourceTree = "<group>";
+		};
 		A292BD8A1B033E97002DAB71 = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +74,7 @@
 		A292BD951B033E97002DAB71 /* NSString-RemoveEmoji */ = {
 			isa = PBXGroup;
 			children = (
-				A292BDC11B033EB7002DAB71 /* NSString+RemoveEmoji */,
+				A25EC4A01F52BEFD0044B846 /* NSString-RemoveEmoji */,
 				A292BD9A1B033E97002DAB71 /* AppDelegate.h */,
 				A292BD9B1B033E97002DAB71 /* AppDelegate.m */,
 				A292BDA31B033E97002DAB71 /* Images.xcassets */,
@@ -87,15 +96,6 @@
 				A292BD981B033E97002DAB71 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A292BDC11B033EB7002DAB71 /* NSString+RemoveEmoji */ = {
-			isa = PBXGroup;
-			children = (
-				A292BDC51B033EB7002DAB71 /* NSString+RemoveEmoji.h */,
-				A292BDC61B033EB7002DAB71 /* NSString+RemoveEmoji.m */,
-			);
-			path = "NSString+RemoveEmoji";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +172,7 @@
 			files = (
 				A292BD9C1B033E97002DAB71 /* AppDelegate.m in Sources */,
 				A292BD991B033E97002DAB71 /* main.m in Sources */,
-				A292BDCA1B033EB7002DAB71 /* NSString+RemoveEmoji.m in Sources */,
+				A25EC4A31F52BEFD0044B846 /* NSString+RemoveEmoji.m in Sources */,
 				A292BDBF1B033EB3002DAB71 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
